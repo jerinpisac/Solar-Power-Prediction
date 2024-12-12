@@ -46,6 +46,28 @@
             font-size: 14px;
             color: black;
         }
+        ul{
+            padding-top: 30px;
+        }
+        li{
+            list-style-type: none;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .text label{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .format{
+            font-size: 14px;
+        }
+        .format table{
+            border: 1px solid black;
+        }
+        .format table td{
+            padding-right: 10px;
+            border: 1px solid black;
+        }
         .home2_main button{
             width: 100%;
             height: 40px;
@@ -91,6 +113,32 @@
                 <label>Upload your file here: </label>
                 <input type="file" name="file" required>
             </div>
+            <ul>
+                <li class="text"><label>Upload the csv file in the given format</label></li>
+                <li class="format">
+                    <table>
+                        <tr>
+                            <td>DAILY_YIELD</td>
+                            <td>TOTAL_YIELD</td>
+                            <td>AMBIENT_TEMPERATURE</td>
+                        </tr>
+                        <tr>
+                            <td>MODULE_TEMPERATURE</td>
+                            <td>IRRADIATION</td>
+                            <td>HOUR</td>
+                        </tr>
+                        <tr>
+                            <td>MINUTE</td>
+                            <td>DAY</td>
+                            <td>MONTH</td>
+                        </tr>
+                        <tr>
+                            <td>YEAR</td>
+                            <td>DAY OF WEEK</td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
             <button type="submit">Upload and Predict</button>
         </form>
     </div>

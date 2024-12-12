@@ -6,7 +6,7 @@ import joblib
 app = Flask(__name__)
 
 # Load the trained model
-model = joblib.load('solar_power_model.pkl')
+model = joblib.load('solar_power_prediction_model.pkl')
 
 @app.route('/')
 def index():
@@ -24,15 +24,20 @@ def home2():
 def predict1():
     try:
         # Get input values from the form
-        dc_power = float(request.form['dc_power'])
         daily_yield = float(request.form['daily_yield'])
         total_yield = float(request.form['total_yield'])
         ambient_temp = float(request.form['ambient_temp'])
         module_temp = float(request.form['module_temp'])
         irradiation = float(request.form['irradiation'])
+        hour = float(request.form['hour'])
+        min = float(request.form['min'])
+        day = float(request.form['day'])
+        month = float(request.form['month'])
+        year = float(request.form['year'])
+        dow = float(request.form['dow'])
 
         # Combine inputs into a feature array
-        features = np.array([[dc_power, daily_yield, total_yield, ambient_temp, module_temp, irradiation]])
+        features = np.array([[daily_yield, total_yield, ambient_temp, module_temp, irradiation, hour, min, day, month, year, dow]])
 
         # Make prediction
         prediction = model.predict(features)[0]
@@ -55,8 +60,9 @@ def predict2():
         return f"Error reading file: {str(e)}", 400
 
     # Ensure the file has the required columns
-    required_columns = ['DC_POWER', 'DAILY_YIELD', 'TOTAL_YIELD',
-                        'AMBIENT_TEMPERATURE', 'MODULE_TEMPERATURE', 'IRRADIATION']
+    required_columns = ['DAILY_YIELD', 'TOTAL_YIELD',
+                        'AMBIENT_TEMPERATURE', 'MODULE_TEMPERATURE', 'IRRADIATION', 
+                        'hour', 'minute','day', 'month', 'year', 'day_of_week']
     
     if not all(col in data.columns for col in required_columns):
         return f"File is missing required columns: {required_columns}", 400

@@ -27,25 +27,6 @@
             text-align: center;
             padding-bottom: 30px;
         }
-        .dc{
-            padding-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-        .dc input{
-            width: 100%;
-            height: 40px;
-            border: 2px solid rgba(255,255,255,0.2);
-            background: rgba(246, 247, 251, 255);
-            border-radius: 30px;
-            outline: none;
-            padding: 10px 50px 10px 30px;
-            font-size: 20px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .dc input::placeholder{
-            color: black;
-        }
         .dy{
             padding-bottom: 20px;
             display: flex;
@@ -141,6 +122,120 @@
         .ir input::placeholder{
             color: black;
         }
+        .hr{
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .hr input{
+            width: 100%;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(246, 247, 251, 255);
+            border-radius: 30px;
+            outline: none;
+            padding: 10px 50px 10px 30px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .hr input::placeholder{
+            color: black;
+        }
+        .min{
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .min input{
+            width: 100%;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(246, 247, 251, 255);
+            border-radius: 30px;
+            outline: none;
+            padding: 10px 50px 10px 30px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .min input::placeholder{
+            color: black;
+        }
+        .day{
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .day input{
+            width: 100%;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(246, 247, 251, 255);
+            border-radius: 30px;
+            outline: none;
+            padding: 10px 50px 10px 30px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .day input::placeholder{
+            color: black;
+        }
+        .month{
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .month input{
+            width: 100%;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(246, 247, 251, 255);
+            border-radius: 30px;
+            outline: none;
+            padding: 10px 50px 10px 30px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .month input::placeholder{
+            color: black;
+        }
+        .year{
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .year input{
+            width: 100%;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(246, 247, 251, 255);
+            border-radius: 30px;
+            outline: none;
+            padding: 10px 50px 10px 30px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .year input::placeholder{
+            color: black;
+        }
+        .dow{
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .dow input{
+            width: 100%;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(246, 247, 251, 255);
+            border-radius: 30px;
+            outline: none;
+            padding: 10px 50px 10px 30px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .dow input::placeholder{
+            color: black;
+        }
         .home1_main button{
             width: 100%;
             height: 40px;
@@ -181,10 +276,6 @@
     <div class="home1_main">
         <h1>Solar Power Prediction</h1>
         <form action="/predict1" method="post">
-            <div class="dc">
-                <input type="text" name="dc_power" required placeholder="DC Power">
-            </div>
-
             <div class="dy">
                 <input type="text" name="daily_yield" required placeholder="Daily Yield">
             </div>
@@ -204,7 +295,24 @@
             <div class="ir">
                 <input type="text" name="irradiation" required placeholder="Irradiation">
             </div>
-
+            <div class="hr">
+                <input type="text" name="hour" required placeholder="Hour">
+            </div>
+            <div class="min">
+                <input type="text" name="min" required placeholder="Minute">
+            </div>
+            <div class="day">
+                <input type="text" name="day" required placeholder="Day">
+            </div>
+            <div class="month">
+                <input type="text" name="month" required placeholder="Month">
+            </div>
+            <div class="year">
+                <input type="text" name="year" required placeholder="Year">
+            </div>
+            <div class="dow">
+                <input type="text" name="dow" required placeholder="Day of the week">
+            </div>
             <button type="submit">Predict</button>
         </form>
     </div>
